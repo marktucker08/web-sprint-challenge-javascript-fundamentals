@@ -17,7 +17,8 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
+// this nested function is able to access the higher order function that contains the internal variable. It can reach outside(up) to find what it is looking for
+// but the myFunction cannot reach down into nestedFunction to get any values.
 
 
 
@@ -30,11 +31,15 @@ myFunction();
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(num) {
+  let counter = 0
+  for (let i = 1; i <= num; i++) {
+    counter = counter + i; 
+  }
+  return counter;
   }
  
+console.log(summation(5));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
