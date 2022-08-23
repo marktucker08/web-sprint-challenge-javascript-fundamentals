@@ -68,13 +68,11 @@ const zooAnimals = [
 // console.log(zooAnimals[0].animal_name);
 
    function animalNames(arr){
-    let displayNames = [];
+    const displayNames = [];
     arr.forEach((element) => { 
-      displayNames.push({ 
-        name: element.animal_name,
-        scientific: element.scientific_name
+      displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`);
     });
-    })
+    //const stringNames = displayNames.toString();
     return displayNames;
    }
 
