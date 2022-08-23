@@ -68,17 +68,18 @@ const zooAnimals = [
 // console.log(zooAnimals[0].animal_name);
 
    function animalNames(arr){
-    const displayNames = [];
-    arr.forEach((element, index) => { 
-      displayNames.push(`name: ${element[index].animal_name},
-      scientific: ${element[index].scientific_name}`
-      );
+    let displayNames = [];
+    arr.forEach((element) => { 
+      displayNames.push({ 
+        name: element.animal_name,
+        scientific: element.scientific_name
+    });
     })
     return displayNames;
    }
 
   
-  // console.log(animalNames(zooAnimals));
+  console.log(animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -97,10 +98,7 @@ const zooAnimals = [
     const lowercased = newList.map((name) => {
       return name.toLowerCase();
   });
-    // newList = newList.toLowerCase();
     return lowercased;
-    // return newList;
-    // return lowerCaseList;
   }
   
   console.log(lowerCaseNames(zooAnimals));
@@ -114,9 +112,14 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(arr){
+    const lowPop = arr.filter((animals) => {
+      return animals.population < 5;
+    }); 
+    return lowPop;
   }
+
+  console.log(lowPopulationAnimals(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
