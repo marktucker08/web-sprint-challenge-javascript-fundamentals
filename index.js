@@ -94,8 +94,13 @@ const zooAnimals = [
     const newList = arr.map((animals) => {
       return animals.animal_name;
   });
-    const lowerCaseList = newList.toLowerCase;
-    return lowerCaseList;
+    const lowercased = newList.map((name) => {
+      return name.toLowerCase();
+  });
+    // newList = newList.toLowerCase();
+    return lowercased;
+    // return newList;
+    // return lowerCaseList;
   }
   
   console.log(lowerCaseNames(zooAnimals));
